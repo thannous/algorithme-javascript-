@@ -1,38 +1,44 @@
-var items = [4, 2, 6, 5, 3, 9];
+var items = [4, 2, 6, 5, 3, 9 ,1, 10 , 1 ];
 
 
 var quickSort = function(A, l, r) {
 
-    if (r - 1 > l) {
-        var pivot = l + Math.floor(Math.random() * (r - l));
-        var pivot = partition(A, l, r, pivot);
-        console.log(A);
-        quickSort(A, l , pivot);
-        quickSort(A, pivot +1, r);
+    if (r > l) {
+        var pivotIndex = l + Math.floor(Math.random() * (r - l));
+        var pivotIndex = partition(A, l, r, pivotIndex);
+        quickSort(A, l , pivotIndex);
+        quickSort(A, pivotIndex +1, r);
 
     }
     return A;
 };
 
 function partition(A, l , r , pivot){
-    var tmp;
+
     var p = A[pivot];
+
     while( l < r ){
-        while(A[l] <= p) {
+
+        while(A[l] < p) {
             l++;
+            console.log("   l = "+ l)
         }
         while(A[r] > p) {
             r--;
+            console.log("   r = "+ l)
         }
         if(l < r) {
-                tmp = A[l];
+                var tmp = A[l];
                 A[l] = A[r];
                 A[r] = tmp;
+            l++;
+            r--;
             }
     }
-    return l;
+    console.log(A)
+    return r;
 }
 
-var res = quickSort(items, 0, items.length - 1);
+var res = quickSort(items, 0, items.length -1 );
 
 console.log(res);
