@@ -49,4 +49,5 @@ var merge = function (tab1, tab2) {
 };
 
 var B = [1, 3, 9, 5, 10, 2, 4, 6, 8, 7];
+console.log(Math.max(B))
 console.log(mergeSort(B));
