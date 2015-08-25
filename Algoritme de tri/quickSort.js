@@ -1,5 +1,6 @@
 var items = [4, 2, 6, 5, 3, 9 ,1, 10 , 1 ];
 
+//recursive implementation of quicksort
 
 var quickSort = function(A, l, r) {
 
